@@ -21,33 +21,34 @@
   height: 200px; display: flex; align-items: center;
   justify-content: center; overflow: hidden; position: relative;
 }
-.pv-physio  { background: linear-gradient(140deg, #080818, #0d0d22); }
+.pv-physio  { background: #080818; }
 .pv-coming  { background: linear-gradient(140deg, #080812, #0b0b1a); }
 .pv-coming2 { background: linear-gradient(140deg, #060610, #09091a); }
 
-/* Physio mockup */
-.physio-frame {
-  width: 185px; height: 125px;
-  background: #0c0c1e;
-  border: 1px solid rgba(99,102,241,.3);
-  border-radius: 11px; padding: 12px;
-  transform: perspective(450px) rotateY(-8deg) rotateX(3deg);
-  transition: transform .4s;
-  box-shadow: 0 14px 36px rgba(0,0,0,.5);
+/* ── Real screenshot for physio ── */
+.physio-screenshot-wrap {
+  width: 100%; height: 100%;
   position: relative;
+  overflow: hidden;
 }
-.project-card:hover .physio-frame {
-  transform: perspective(450px) rotateY(-4deg) rotateX(1deg) translateY(-4px);
+.physio-screenshot {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s ease;
 }
-.pf-dots { position: absolute; top: 5px; right: 6px; display: flex; gap: 3px; }
-.pf-dots span { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.12); }
-.pf-dots span:first-child { background: rgba(99,102,241,.5); }
-.pf-nav { width: 100%; height: 6px; background: linear-gradient(90deg,var(--ind),var(--indl)); border-radius: 3px; margin-bottom: 8px; opacity: .9; }
-.pf-line { height: 3.5px; background: rgba(99,102,241,.2); border-radius: 2px; margin-bottom: 5px; }
-.pf-line.w80 { width: 80%; } .pf-line.w60 { width: 60%; } .pf-line.w45 { width: 45%; }
-.pf-cards { display: flex; gap: 4px; margin-top: 5px; }
-.pf-cards div { flex: 1; height: 24px; background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.2); border-radius: 4px; }
+.project-card:hover .physio-screenshot {
+  transform: scale(1.04);
+}
+/* subtle dark gradient at bottom so card body blends in */
+.physio-screenshot-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 55%, rgba(8,8,24,.85) 100%);
+  pointer-events: none;
+}
 
+/* Coming soon ring */
 .coming-ring {
   width: 65px; height: 65px; border-radius: 50%;
   border: 2px dashed rgba(99,102,241,.2);
@@ -55,7 +56,11 @@
   font-size: 1.5rem; color: rgba(99,102,241,.25);
   transition: all .3s;
 }
-.project-card:hover .coming-ring { border-color: rgba(99,102,241,.45); color: rgba(99,102,241,.5); transform: rotate(45deg); }
+.project-card:hover .coming-ring {
+  border-color: rgba(99,102,241,.45);
+  color: rgba(99,102,241,.5);
+  transform: rotate(45deg);
+}
 
 /* Body */
 .project-body { padding: 1.5rem; }
@@ -73,5 +78,10 @@
 .project-chips { display: flex; gap: .4rem; flex-wrap: wrap; }
 .chip { padding: .18rem .55rem; background: rgba(255,255,255,.05); border-radius: 4px; font-size: .68rem; color: rgba(255,255,255,.32); font-weight: 500; }
 
-.project-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--indl); font-size: .82rem; font-weight: 600; margin-top: .9rem; transition: gap .2s, color .2s; }
+.project-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: var(--indl); font-size: .82rem; font-weight: 600;
+  margin-top: .9rem; transition: gap .2s, color .2s;
+  text-decoration: none;
+}
 .project-link:hover { gap: .65rem; color: #fff; }

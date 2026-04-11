@@ -1,47 +1,41 @@
 import React from 'react';
 import './Projects.css';
+import physioImg from '../assets/physio.png';
 
 const PROJECTS = [
   {
     status: 'live',
     statusLabel: '✦ Live',
-    title: 'PhysioMotion Clinic',
+    title: 'PhysioFoundation Clinic',
     desc: 'Full web presence for a physiotherapy clinic — online booking, service pages, patient testimonials, and a trust-first design that converts visitors into booked appointments.',
     chips: ['HTML/CSS', 'JavaScript', 'Booking CMS', 'SEO'],
-    link: '#cta',
-    linkLabel: 'View case study →',
+    link: 'https://physiofoundation.in/',
+    linkLabel: 'View live site →',
     visual: 'physio',
   },
   {
     status: 'progress',
     statusLabel: 'In Progress',
-    title: 'Local Retail Brand',
+    title: 'Grundfos Authorized Dealer',
     desc: 'React-powered storefront with product catalogue, WhatsApp enquiry flow, and Google Business integration. Targeting Q3 delivery.',
     chips: ['React', 'Node.js', 'Vercel'],
     visual: 'coming',
   },
-  {
-    status: 'upcoming',
-    statusLabel: 'Upcoming',
-    title: 'Healthcare Dashboard',
-    desc: 'React + TypeScript admin dashboard for a healthcare startup — patient tracking, appointment analytics, and mobile-first clinic staff experience.',
-    chips: ['React', 'TypeScript', 'REST API'],
-    visual: 'coming2',
-  },
+  // {
+  //   status: 'upcoming',
+  //   statusLabel: 'Upcoming',
+  //   title: 'Healthcare Dashboard',
+  //   desc: 'React + TypeScript admin dashboard for a healthcare startup — patient tracking, appointment analytics, and mobile-first clinic staff experience.',
+  //   chips: ['React', 'TypeScript', 'REST API'],
+  //   visual: 'coming2',
+  // },
 ];
 
-function PhysioMockup() {
+function PhysioScreenshot() {
   return (
-    <div className="physio-frame">
-      <div className="pf-dots"><span/><span/><span/></div>
-      <div className="pf-nav" />
-      <div className="pf-line w80" />
-      <div className="pf-line w60" />
-      <div className="pf-line w80" />
-      <div className="pf-line w45" />
-      <div className="pf-cards">
-        <div/><div/><div/>
-      </div>
+    <div className="physio-screenshot-wrap">
+      <img src={physioImg} alt="PhysioFoundation website screenshot" className="physio-screenshot" />
+      <div className="physio-screenshot-overlay" />
     </div>
   );
 }
@@ -62,7 +56,7 @@ export default function Projects() {
           {PROJECTS.map((p, i) => (
             <div key={p.title} className={`project-card rv${i === 1 ? ' d1' : i === 2 ? ' d2' : ''}`}>
               <div className={`project-visual pv-${p.visual}`}>
-                {p.visual === 'physio' ? <PhysioMockup /> : <ComingRing />}
+                {p.visual === 'physio' ? <PhysioScreenshot /> : <ComingRing />}
               </div>
               <div className="project-body">
                 <span className={`project-tag${p.status === 'live' ? ' live' : ''}`}>{p.statusLabel}</span>
@@ -72,7 +66,9 @@ export default function Projects() {
                   {p.chips.map(c => <span key={c} className="chip">{c}</span>)}
                 </div>
                 {p.link && (
-                  <a href={p.link} className="project-link">{p.linkLabel}</a>
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                    {p.linkLabel}
+                  </a>
                 )}
               </div>
             </div>

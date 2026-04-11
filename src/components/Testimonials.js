@@ -7,28 +7,28 @@ const TESTIMONIALS = [
     stars: '★★★★★',
     quote:
       'Working with NodeNexus was seamless from start to finish. They understood exactly what a physio clinic needs online and delivered something we\'re genuinely proud to show every new patient.',
-    av: 'RP',
-    name: 'Dr. Ramya Priya',
+    av: <img src="../assets/Shankar copy.jpeg" ></img>, 
+    name: 'Dr. Shankar',
     role: 'Founder, PhysioMotion Clinic',
   },
-  {
-    featured: false,
-    stars: '★★★★★',
-    quote:
-      'Our site loads in under a second and looks better than clinics three times our size. New patient enquiries came the very first week we launched.',
-    av: 'AK',
-    name: 'Arun Kumar',
-    role: 'Practice Manager, PhysioMotion',
-  },
-  {
-    featured: false,
-    stars: '★★★★★',
-    quote:
-      'The booking flow they designed reduced our phone calls by half. Attention to detail was impressive — they even suggested improvements I hadn\'t thought of.',
-    av: 'SR',
-    name: 'Sundari R.',
-    role: 'Clinic Operations, Salem',
-  },
+  // {
+  //   featured: false,
+  //   stars: '★★★★★',
+  //   quote:
+  //     'Our site loads in under a second and looks better than clinics three times our size. New patient enquiries came the very first week we launched.',
+  //   av: 'AK',
+  //   name: 'Arun Kumar',
+  //   role: 'Practice Manager, PhysioMotion',
+  // },
+  // {
+  //   featured: false,
+  //   stars: '★★★★★',
+  //   quote:
+  //     'The booking flow they designed reduced our phone calls by half. Attention to detail was impressive — they even suggested improvements I hadn\'t thought of.',
+  //   av: 'SR',
+  //   name: 'Sundari R.',
+  //   role: 'Clinic Operations, Salem',
+  // },
 ];
 
 export default function Testimonials() {

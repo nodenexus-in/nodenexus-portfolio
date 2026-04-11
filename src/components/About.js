@@ -16,7 +16,7 @@ export default function About() {
             <img src={WORKSPACE_IMG} alt="NodeNexus workspace — code, create, inspire" />
             <div className="about-img-badge">
               <span className="live-dot" />
-              Actively building — Salem, TN
+              Actively building — BANGLORE, KA
             </div>
           </div>
 
